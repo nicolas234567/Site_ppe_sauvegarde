@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Inscription</title>
     <link rel="stylesheet" href="style.css">
-    <script src="check_input.js"></script>
 </head>
 <body>
   <nav class="bouton_droite">
@@ -22,15 +21,59 @@
         <li><a href="a propos de nous.html">A propos de nous</a></li>
         <li><a href="panier.php">Panier</a></li>
       </ol>
-      </nav>
-      <form id="form" method="post" class="form-container"  onsubmit="verifTexte();">
+    </nav>
+    <form id="form" method="post" class="form-container" action="inscription.php">
         <input type="text" placeholder="nom d'utilisateur" class="form1" name="username">
-        <input type="text" placeholder="mot de passe" class="form1" name="mdp" required="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{12,}$/;">
-        <input type="text" placeholder="nom" class="form1" name="nom" required="/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/;">
-        <input type="text" placeholder="prenom" class="form1" name="prenom" required="/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/;">
-        <input type="text" placeholder="mail" class="form1" name="mail" required="/^[a-zA-Z0-9._%+-]+@.+\.edu$/;">
-        <input type="text" placeholder="06-xx-xx-xx-xx" class="form1" name="numero" required="/^(06|07)(-\d{2}){4}$/;">
+
+        <input type="text" placeholder="mot de passe" class="form1" name="mdp" id="mdp">
+        <small id="err-mdp" style="color:red;display:none;">12 caractères min, une majuscule, une minuscule, un chiffre, un caractère spécial.</small>
+
+        <input type="text" placeholder="nom" class="form1" name="nom" id="nom">
+        <small id="err-nom" style="color:red;display:none;">Doit commencer par une majuscule (ex: Dupont ou Marie-Claire).</small>
+
+        <input type="text" placeholder="prenom" class="form1" name="prenom" id="prenom">
+        <small id="err-prenom" style="color:red;display:none;">Doit commencer par une majuscule (ex: Jean ou Jean-Pierre).</small>
+
+        <input type="text" placeholder="mail" class="form1" name="mail" id="mail">
+        <small id="err-mail" style="color:red;display:none;">L'adresse mail doit contenir un @.</small>
+
+        <input type="text" placeholder="06-xx-xx-xx-xx" class="form1" name="numero" id="numero">
+        <small id="err-numero" style="color:red;display:none;">Format attendu : 06-xx-xx-xx-xx ou 07-xx-xx-xx-xx.</small>
+
         <button type="submit" class="form1">Envoyer</button>
     </form>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const regles = {
+            mdp:    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{12,}$/,
+            nom:    /^[A-Z][a-z]+(-[A-Z][a-z]+)?$/,
+            prenom: /^[A-Z][a-z]+(-[A-Z][a-z]+)?$/,
+            mail:   /^[^@]+@[^@]+$/,
+            numero: /^(06|07)(-\d{2}){4}$/
+        };
+
+        document.getElementById("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let valide = true;
+
+            for (const [champ, regex] of Object.entries(regles)) {
+                const input = document.getElementById(champ);
+                const erreur = document.getElementById("err-" + champ);
+                if (!regex.test(input.value)) {
+                    erreur.style.display = "block";
+                    input.style.border = "1px solid red";
+                    valide = false;
+                } else {
+                    erreur.style.display = "none";
+                    input.style.border = "";
+                }
+            }
+
+            if (valide) this.submit();
+        });
+    });
+    </script>
 </body>
 </html>
