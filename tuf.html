@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ordinateur Tuf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="bouton_droite">
+        <ol>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="connexion.php">Connexion</a></li>
+          <li><a href="deconnexion.php">Déconnexion</a></li>
+        </ol>
+      </nav>
+    <nav class="bouton_centré">
+        <ol>
+          <li><a href="ordinateur.html">Ordinateur</a></li>
+          <li><a href="péripherique.html">Péripherique</a></li>
+          <li><a href="a propos de nous.html">A propos de nous</a></li>
+          <li><a href="panier.php">Panier</a></li>
+        </ol>
+      </nav>
+   <div class="product-container">
+        <h1 class="texte">Ordinateur Gaming TUF</h1>
+        <div class="product_image_container">
+        <img src="TUF.jpg" alt="Produit" class="image_product">
+        </div>
+        <h1 class="texte">1300€</h1>
+        <h2 class="texte">Caractéristiques :</h2>
+        <ul class="texte">
+            <li><strong>Processeur :</strong> AMD Ryzen 7 7735HS / Intel Core i7-12700H</li>
+            <li><strong>Carte Graphique :</strong> NVIDIA GeForce RTX 4060 (8 Go VRAM)</li>
+            <li><strong>Mémoire RAM :</strong> 16 Go DDR5 (4800 MHz)</li>
+            <li><strong>Stockage :</strong> 1 To SSD NVMe Gen 4</li>
+            <li><strong>Écran :</strong> 15.6" Full HD, IPS, 144 Hz / 165 Hz</li>
+            <li><strong>Autonomie :</strong> 6 heures (mode bureautique)</li>
+            <li><strong>Refroidissement :</strong> Système à double ventilateur + caloducs</li>
+            <li><strong>Connectique :</strong> USB-C, 3x USB-A, HDMI 2.1, Wi-Fi 6E, RJ45</li>
+            <li><strong>Clavier :</strong> Rétroéclairé RGB, touches gaming renforcées</li>
+            <li><strong>Système :</strong> Windows 11 / compatible Linux</li>
+        </ul>
+        <form method="post" action="achat.php">
+            <input class="button_blanc" type="number" min="1" max="100" name="quantite" value="1">
+            <button class="button1" type="submit" name="modele" value="tuf">Ajouter au panier</button>
+        </form>
+        
+    </div>
+</body>
+</html>

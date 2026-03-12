@@ -1,0 +1,132 @@
+body {
+    background-color: lightgray;
+}
+
+
+.form-container{
+    padding-left: 40%;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center
+}
+
+.form1{
+    max-width: 30%;
+}
+
+img {
+    max-width: 400px;
+    max-height: 250px;
+}
+
+.texte{
+    text-align: center;
+    list-style: none;
+    margin: auto;
+}
+
+.produit {
+    text-align: center;
+    margin: auto;
+    margin: 20px;
+}
+
+.product {
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+.product_image_container,
+.panier {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+.image_product {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.button_blanc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.buy,
+.videz_panier,
+.button1,
+.input_panier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    margin: auto;
+}
+
+.buy:hover,
+.bouton_centré a:hover,
+.bouton_droite a:hover {
+    background-color: gray;
+}
+
+.product:hover {
+    opacity: 0.8;
+}
+
+.bouton_centré ol,
+.bouton_droite ol {
+    list-style: none;
+    padding: 0;
+    margin: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.bouton_centré ol {
+    display: flex;
+    justify-content: center;
+}
+
+.bouton_droite ol {
+    justify-content: right;
+}
+
+.bouton_centré a,
+.bouton_droite a {
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.bouton_centré li {
+    display: inline;
+}
+
+.input_panier {
+    padding-top: 15%;
+    margin: 10%;      
+}
+
+@media (max-width: 510px) {
+  img {
+    max-width: 200px;
+    max-height: 125px;
+}
+html {
+  font-size: 12px;
+}
+}

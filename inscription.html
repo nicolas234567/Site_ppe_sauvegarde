@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="check_input.js"></script>
+</head>
+<body>
+  <nav class="bouton_droite">
+        <ol>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="connexion.php">Connexion</a></li>
+          <li><a href="deconnexion.php">Déconnexion</a></li>
+        </ol>
+  </nav>
+    <h1 class="texte">Nouveau ? Inscrivez Vous :</h1>
+    <nav class="bouton_centré">
+      <ol>
+        <li><a href="ordinateur.html">Ordinateur</a></li>
+        <li><a href="péripherique.html">Péripherique</a></li>
+        <li><a href="a propos de nous.html">A propos de nous</a></li>
+        <li><a href="panier.php">Panier</a></li>
+      </ol>
+      </nav>
+      <form id="form" method="post" class="form-container"  onsubmit="verifTexte();">
+        <input type="text" placeholder="nom d'utilisateur" class="form1" name="username">
+        <input type="text" placeholder="mot de passe" class="form1" name="mdp" required="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{12,}$/;">
+        <input type="text" placeholder="nom" class="form1" name="nom" required="/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/;">
+        <input type="text" placeholder="prenom" class="form1" name="prenom" required="/^[A-Z][a-z]+(-[A-Z][a-z]+)?$/;">
+        <input type="text" placeholder="mail" class="form1" name="mail" required="/^[a-zA-Z0-9._%+-]+@.+\.edu$/;">
+        <input type="text" placeholder="06-xx-xx-xx-xx" class="form1" name="numero" required="/^(06|07)(-\d{2}){4}$/;">
+        <button type="submit" class="form1">Envoyer</button>
+    </form>
+</body>
+</html>

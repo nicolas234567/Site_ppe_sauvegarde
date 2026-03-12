@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logitech g502</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="bouton_droite">
+        <ol>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="connexion.php">Connexion</a></li>
+          <li><a href="deconnexion.php">Déconnexion</a></li>
+        </ol>
+      </nav>
+    <nav class="bouton_centré">
+        <ol>
+          <li><a href="ordinateur.html">Ordinateur</a></li>
+          <li><a href="péripherique.html">Péripherique</a></li>
+          <li><a href="a propos de nous.html">A propos de nous</a></li>
+          <li><a href="panier.php">Panier</a></li>
+        </ol>
+      </nav>
+   <div class="product-container">
+        <h1 class="texte">Logitech G502 souris bluetooth</h1>
+        <div class="product_image_container">
+        <img src="logitech_g502.jpg" alt="Produit" class="image_product">
+        </div>
+        <h1 class="texte">50€</h1>
+        <h2 class="texte">Caractéristiques :</h2>
+        <ul class="texte">
+            <li><strong>Type :</strong> Souris gamer filaire</li>
+            <li><strong>Capteur :</strong> HERO 25K (optique, 25 600 DPI max)</li>
+            <li><strong>Rétroéclairage :</strong> RGB Lightsync personnalisable</li>
+            <li><strong>Nombre de boutons :</strong> 11 boutons programmables</li>
+            <li><strong>Poids :</strong> 121 g (ajustable avec des poids supplémentaires)</li>
+            <li><strong>Connectivité :</strong> USB, câble de 2,1 m</li>
+            <li><strong>Fréquence de rapport :</strong> 1000 Hz</li>
+            <li><strong>Ergonomie :</strong> Design asymétrique pour droitier, surface en caoutchouc</li>
+            <li><strong>Compatibilité :</strong> Windows, macOS</li>
+            <li><strong>Logiciel :</strong> Logitech G HUB pour personnalisation avancée</li>
+        </ul>        
+        <form method="post" action="achat.php">
+            <input class="button_blanc" type="number" min="1" max="100" name="quantite" value="1">
+            <button class="button1" type="submit" name="modele" value="logitech g502">Ajouter au panier</button>
+        </form>
+    </div>
+</body>
+</html>
