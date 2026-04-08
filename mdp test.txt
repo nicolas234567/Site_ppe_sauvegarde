@@ -1,2 +1,0 @@
-identifiant : test
-mdp : Testppe1mdp!
