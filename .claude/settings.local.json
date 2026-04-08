@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/wamp64/www/site_ppe/images)",
+      "Bash(mv /c/wamp64/www/site_ppe/asus.jpg /c/wamp64/www/site_ppe/images/)",
+      "Bash(mv /c/wamp64/www/site_ppe/hyperx.jpg /c/wamp64/www/site_ppe/images/)",
+      "Bash(mv /c/wamp64/www/site_ppe/logitech_g502.jpg /c/wamp64/www/site_ppe/images/)",
+      "Bash(mv /c/wamp64/www/site_ppe/tuf.jpg /c/wamp64/www/site_ppe/images/)"
+    ]
+  }
+}
