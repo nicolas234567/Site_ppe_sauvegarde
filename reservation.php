@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'admin') {
         <li><a href="a propos de nous.html">À propos</a></li>
         <li><a href="panier.php">Panier</a></li>
         <li><a href="reservation.php">Réservation</a></li>
+        <li><a href="rapport.php">Rapport</a></li>
     </ol>
 </nav>
 

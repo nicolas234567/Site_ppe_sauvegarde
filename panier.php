@@ -77,6 +77,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'reduire') {
         <li><a href="a propos de nous.html">À propos</a></li>
         <li><a href="panier.php">Panier</a></li>
         <li><a href="reservation.php">Réservation</a></li>
+        <li><a href="rapport.php">Rapport</a></li>
     </ol>
 </nav>
 
