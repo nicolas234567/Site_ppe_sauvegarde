@@ -81,7 +81,8 @@ CREATE TABLE IF NOT EXISTS `stock` (
   `id_produit` int NOT NULL,
   `modele` varchar(50) DEFAULT NULL,
   `quantite` int NOT NULL,
-  `prix` varchar(50) DEFAULT NULL
+  `prix` varchar(50) DEFAULT NULL,
+  `duree_blocage` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --

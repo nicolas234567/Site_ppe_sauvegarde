@@ -22,6 +22,24 @@ if (!$connect) {
 $res_role = mysqli_query($connect, "SELECT role FROM client WHERE id_client = '$id_client'");
 $client   = mysqli_fetch_assoc($res_role);
 $role     = $client['role'] ?? 'client';
+
+// Traitement de la réservation
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $role === 'admin') {
+    $modele = mysqli_real_escape_string($connect, $_POST['modele']);
+
+    if ($_POST['action'] === 'liberer') {
+        mysqli_query($connect, "UPDATE stock SET duree_blocage = NULL WHERE modele = '$modele'");
+        header('Location: reservation.php?status=libere');
+    } else {
+        $duree = (int) $_POST['duree'];
+        mysqli_query($connect,
+            "UPDATE stock SET duree_blocage = DATE_ADD(NOW(), INTERVAL $duree MINUTE)
+             WHERE modele = '$modele'"
+        );
+        header('Location: reservation.php?status=reserve');
+    }
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,6 +68,14 @@ $role     = $client['role'] ?? 'client';
     </ol>
 </nav>
 
+<?php if (isset($_GET['status'])): ?>
+    <?php if ($_GET['status'] === 'reserve'): ?>
+        <script>alert('Produit bien réservé.');</script>
+    <?php elseif ($_GET['status'] === 'libere'): ?>
+        <script>alert('Produit bien libéré.');</script>
+    <?php endif; ?>
+<?php endif; ?>
+
 <?php if ($role !== 'admin'): ?>
     <p class="texte" style="color:red;">Vous n'êtes pas administrateur.</p>
 <?php else: ?>
@@ -66,7 +92,8 @@ $role     = $client['role'] ?? 'client';
                 <p><strong>Prix :</strong> <?= htmlspecialchars($row['prix']) ?></p>
             </div>
             <div class="item-actions">
-                <form method="post" action="reserver.php">
+                <form method="post" action="reservation.php">
+                    <input type="hidden" name="action" value="reserver">
                     <input type="hidden" name="modele" value="<?= $modele_html ?>">
                     <label>Durée :
                         <select name="duree">
@@ -78,6 +105,11 @@ $role     = $client['role'] ?? 'client';
                         </select>
                     </label>
                     <button type="submit" class="btn-ajouter">Réserver</button>
+                </form>
+                <form method="post" action="reservation.php">
+                    <input type="hidden" name="action" value="liberer">
+                    <input type="hidden" name="modele" value="<?= $modele_html ?>">
+                    <button type="submit" class="btn-supprimer">Enlever la réservation</button>
                 </form>
             </div>
         </div>

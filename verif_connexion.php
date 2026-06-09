@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Vérification du mot de passe contre le hash stocké en base
-        else if (password_verify($mdp, $user['mot_de_passe'])) {
+        if (password_verify($mdp, $user['mot_de_passe'])) {
             $mysqli->query("UPDATE client SET nb_tentatives = 0 WHERE id_client = " . $user['id_client']);
             session_regenerate_id(true);
             $_SESSION['user_id']  = $user['id_client'];
