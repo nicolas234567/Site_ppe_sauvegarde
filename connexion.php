@@ -23,6 +23,7 @@ session_start();
             <li><a href="péripherique.html">Péripherique</a></li>
             <li><a href="a propos de nous.html">A propos de nous</a></li>
             <li><a href="panier.php">Panier</a></li>
+            <li><a href="reservation.php">Réservation</a></li>
         </ol>
     </nav>
 
