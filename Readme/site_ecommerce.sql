@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mail` varchar(50) NOT NULL,
   `numero` int NOT NULL,
   `id_client` int NOT NULL AUTO_INCREMENT,
+  `nb_tentatives` int NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_client`)
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
