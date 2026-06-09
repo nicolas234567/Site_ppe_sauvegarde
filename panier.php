@@ -94,6 +94,12 @@ if ($result && mysqli_num_rows($result) > 0) {
         $total += floatval($row['prix']) * (int)$row['quantite'];
     }
 
+    $remise = false;
+    if ($total > 1000) {
+        $total *= 0.90;
+        $remise = true;
+    }
+
     foreach ($rows as $row) {
         $modele_html = htmlspecialchars($row['modele']);
         echo "
@@ -128,7 +134,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 
     echo "
         <div class='bas-panier'>
-            <span class='total-panier'>Total : {$total} €</span>
+            " . ($remise ? "<p style='color:green'>Remise 10%</p>" : "") . "
+            <span class='total-panier'>Total : " . number_format($total, 2) . " €</span>
             <form action='reinitialiser.php'>
                 <input class='videz_panier' type='submit' value='Vider le panier'>
             </form>
